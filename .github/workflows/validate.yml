@@ -1,0 +1,17 @@
+name: Validate JSON file
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  validate-dev:
+    uses: VOVELEE/validate-json-file/.github/workflows/validate-json.yml@validate
+    with:
+      environment: dev
+  validate-test:
+    uses: VOVELEE/validate-json-file/.github/workflows/validate-json.yml@validate
+    with:
+      environment: test
